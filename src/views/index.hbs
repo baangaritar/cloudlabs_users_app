@@ -1,0 +1,70 @@
+<div class="jumbotron mt-4">
+    <h1 class="display-4">Cloudlabs manejo de usuarios</h1>
+    <p class="lead">La empresa requiere un pequeño sistema de administración de usuarios, creado en NodeJS,
+        Express y Handlebars, para el almacenamiento de datos, se puede generar una pequeña base de
+        datos en cualquier motor de bases de datos, por su simplicidad, Mongo es recomendado.
+        Se requiere que los usuarios tengan un id, nombre de usuario, un nombre, un apellido y un correo
+        electrónico y que los endpoints estén protegidos tras de un protector de identidad, en este caso,
+        Passport es recomendado.</p>
+    <hr class="my-4">
+    <p>Los requerimientos funcionales de la aplicación son los siguientes:
+    <ul>
+        <li>
+            <b>Lista de usuarios:</b> 
+            <ul>
+                <li>aplicación debe tener una dirección donde yo pueda ver una lista de los
+                    nombres de usuario.</li>
+                <li>En esta página debe existir una opción de creación de usuarios.</li>
+            </ul>
+
+        </li>
+        <li>
+            <b>Creación de usuarios:</b> 
+            <ul>
+                <li>Al darle click a la opción de creación de usuarios, la aplicación debe redirigirme a
+                    un formulario que contenga inputs para los datos del usuario (Nombre de usuario,
+                    Nombre, Apellido, Email).</li>
+                <li>Debe existir una validación para que la aplicación no permita guardar usuarios con
+                    nombre de usuario, Nombre o Email vacíos y mostrar un error en el formulario.</li>
+                <li>Tampoco debe permitir guardar un usuario cuyo nombre de usuario o correo ya
+                    esté registrado dentro de la aplicación.</li>
+                <li>Si todos los campos son válidos, la aplicación debe guardar el usuario con el id
+                    siguiente al id máximo de los usuarios ya guardados en la aplicación y redirigirse a
+                    la lista de usuarios.</li>
+            </ul>
+
+        </li>
+        <li>
+            <b>Detalle de usuario:</b>
+            <ul>
+                <li>
+                    Al darle clic a alguno de los nombres de usuario en la página de lista de usuarios,
+                    la aplicación debe redirigirme a una página de detalles de usuario, donde se
+                    muestren en detalle el nombre de usuario, nombre, apellido y email del usuario
+                    seleccionado, además de un botón de eliminar el usuario.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <b>Eliminar usuario: </b>
+            <ul>
+                <li> Al darle clic al botón de eliminación de usuario, la aplicación debe pedir
+                    confirmación de eliminación, si se cancela, no debe pasar nada, si se confirma, el
+                    usuario debe ser eliminado, y la aplicación debe redirigirme a la lista de usuarios,
+                    donde el usuario recientemente eliminado no debe estar. </li>
+            </ul>
+        </li>
+    </ul>
+    <b>Recomendaciones:</b>
+    <ul>
+        <li>Revisar la documentación de Express y Handlebars</li>
+        <li>Usar el generador de Express para el inicio del desarrollo de la aplicación para ahorrar
+            tiempo en el inicio.</li>
+        <li>Tener claro el manejo de operaciones de array en JavaScript.</li>
+        <li>Usar MongoDB y Passport es recomendado debido a su simplicidad y compatibilidad ya
+            probada en NodeJS</li>
+    </ul>
+
+    Éxitos!
+    </p>
+</div>

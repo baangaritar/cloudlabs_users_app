@@ -1,0 +1,40 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Editar Persona</h3>
+    </div>
+    <div class="card-body">
+      <form action="/persons/edit-person/{{person._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-row">
+            <div class="col">
+                <input name="name" class="form-control" placeholder="Nombre" value="{{person.name}}" autofocus />
+            </div>
+            <div class="col">
+                <input name="lastname" class="form-control" value="{{person.lastname}}" placeholder="Apellido" />
+            </div>
+        </div>
+        <div class="form-group">
+          <input name="username" class="form-control" value="{{person.username}}"/>
+        </div>
+        <div class="form-group">
+          <input name="email" class="form-control" value="{{person.email}}"/>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="row">
+    {{#each persons}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{ name }} {{ lastname }} <a href="/persons/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                </h4>
+                <p class="text-secondary text-center">
+                    {{ username }}
+                    <br>
+                    {{ email }}
+                </p>
+                <!-- DELETE REQUEST -->
+
+                <button type="button" class="btn btn-danger btn-block btn-sm" data-toggle="modal"
+                    data-target="#deleteModal{{@index}}" value="{{this}}">
+                    Borrar
+                </button>
+                <div class="modal fade" id="deleteModal{{@index}}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" id="deleteModalLabel">¿Quieres Borrar este usuario?
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p class="text-secondary text-center">
+                                    {{name}} {{lastname}}
+                                    <br>
+                                    {{username }}
+                                    <br>
+                                    {{email }}
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <form action="/persons/delete/{{_id}}?_method=DELETE" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-danger">Borrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card mx-auto">
+        <div class="card-body">
+            <h1 class="text-center">Upss!!! {{user.name}}</h1>
+            <p class="lead">Aún no hay personas creadas.</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<br>
+<a href="/persons/add" class="btn btn-success btn-block">¡Agregar una nueva persona!</a>
